@@ -9,16 +9,22 @@ module Etsy
     # Perform a GET request for the resource with optional parameters - returns
     # A Response object with the payload data
     def self.get(resource_path, parameters = {})
+      # wait 0.5 second to delay Etsy request
+      sleep(1)
       request = Request.new(resource_path, parameters)
       Response.new(request.get)
     end
 
     def self.post(resource_path, parameters = {})
+      # wait 0.5 second to delay Etsy request
+      sleep(1)
       request = Request.new(resource_path, parameters)
       Response.new(request.post)
     end
 
     def self.put(resource_path, parameters = {})
+      # wait 0.5 second to delay Etsy request
+      sleep(1)
       request = Request.new(resource_path, parameters)
       Response.new(request.put)
     end

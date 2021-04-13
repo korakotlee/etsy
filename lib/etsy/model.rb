@@ -50,8 +50,6 @@ module Etsy
           num_batches = limit / batch_size
 
           num_batches.times do |batch|
-            # wait 0.5 second to delay Etsy request
-            sleep(0.5)
             total_offset = initial_offset + batch * batch_size
             response = Request.get(endpoint, options.merge(:limit => batch_size, :offset => total_offset))
             result << response.result
